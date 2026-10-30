@@ -1,0 +1,29 @@
+name: FlyPlumes
+version: '${project.version}'
+main: fr.ivalona.flyplumes.FlyPlugin
+# 1.21 est accepte par les serveurs recents : ca evite un refus de chargement
+# si le format de version de l'API change.
+api-version: '1.21'
+author: Ivalona
+description: Fly a duree limitee avec des plumes, fly infini par permission.
+softdepend: [Nexo, PlaceholderAPI, CustomNameplates, LuckPerms]
+
+commands:
+  fly:
+    description: Active ou desactive le mode fly.
+    usage: /fly
+  flyplume:
+    description: Commandes d'administration de FlyPlumes.
+    usage: /flyplume <give|addtime|removetime|settime|check|reload>
+    aliases: [flyplumes]
+
+permissions:
+  flyplumes.use:
+    description: Utiliser /fly et les plumes de fly.
+    default: true
+  flyplumes.unlimited:
+    description: Fly infini, sans consommer de temps ni de plume.
+    default: false
+  flyplumes.admin:
+    description: Commandes d'administration /flyplume.
+    default: op

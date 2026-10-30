@@ -1,0 +1,76 @@
+# ============================================================
+# FlyPlumes - config.yml
+#
+# Couleurs acceptees partout (noms, descriptions, messages) :
+#   - codes classiques :  &a  &b  &c  &l  &o  &r ...
+#   - hexadecimal :       &#RRGGBB   ou   <#RRGGBB>
+#   - balises MiniMessage : <gradient:#ff0000:#00ff00>texte</gradient>, <bold>, ...
+#
+# Apres modification : /flyplume reload
+# ============================================================
+
+# Mondes dans lesquels le fly est interdit (noms exacts des mondes).
+disabled-worlds: []
+
+fly:
+  # true  : le temps ne diminue que quand le joueur vole vraiment (en l'air).
+  # false : le temps diminue des que le mode fly est active.
+  consume-only-while-flying: true
+  # Duree (en secondes) pendant laquelle le joueur ne prend pas de degats de chute
+  # apres la fin du fly (ou la desactivation du fly).
+  fall-protection-seconds: 20
+  # Messages d'avertissement quand il reste X secondes (liste vide pour desactiver).
+  warn-at-seconds: [60, 30, 10, 5]
+  # Temps de fly maximum cumulable en secondes (0 = pas de limite).
+  max-seconds: 0
+
+# Format de l'affichage du temps (messages, lore, placeholders).
+time-format:
+  hours: "h"
+  minutes: "min"
+  seconds: "s"
+  separator: " "
+  # Affiche quand le temps est a zero.
+  zero: "0s"
+  # Affiche pour les joueurs qui ont le fly infini (permission flyplumes.unlimited).
+  infinite: "infini"
+
+# Les plumes. L'identifiant (plume_10, plume_30...) est libre : tu peux en ajouter.
+# Donner une plume : /flyplume give <joueur> <id> [quantite]
+#
+# material         : item de base (FEATHER par defaut).
+# nexo-id          : (facultatif) id d'un item Nexo ; la texture vient de Nexo.
+#                    Utilise si Nexo est installe, sinon on retombe sur "material".
+# item-model       : (facultatif) modele d'item du resource pack, ex: "nexo:plume_fly_10"
+#                    ou "monpack:plume_fly_10". Utile si tu n'utilises pas nexo-id.
+# name / lore      : nom et description (couleurs acceptees).
+#                    %duration% est remplace par la duree de la plume.
+# glow             : true pour l'effet d'enchantement.
+items:
+  plume_10:
+    seconds: 600
+    material: FEATHER
+    nexo-id: ""
+    item-model: ""
+    glow: true
+    name: "&b&lPlume Fly &7(&f10 minutes&7)"
+    lore:
+      - "&7Clic droit pour ajouter &e%duration%"
+      - "&7de temps de fly a ton compte."
+      - ""
+      - "&8Utilise &f/fly &8pour voler."
+  plume_30:
+    seconds: 1800
+    material: FEATHER
+    nexo-id: ""
+    item-model: ""
+    glow: true
+    name: "&d&lPlume Fly &7(&f30 minutes&7)"
+    lore:
+      - "&7Clic droit pour ajouter &e%duration%"
+      - "&7de temps de fly a ton compte."
+      - ""
+      - "&8Utilise &f/fly &8pour voler."
+
+# Sauvegarde des temps (data.yml), en secondes.
+save-interval-seconds: 60

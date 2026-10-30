@@ -1,0 +1,40 @@
+# ============================================================
+# FlyPlumes - messages.yml
+# Couleurs : &a, &#RRGGBB, <#RRGGBB>, balises MiniMessage.
+# Variables : %time% %added% %total% %max% %player% %id% %amount% %duration%
+# Apres modification : /flyplume reload
+# ============================================================
+
+prefix: "&6&lɪᴠᴀʟᴏɴᴀ &7» &r"
+
+fly-enabled: "%prefix%&aMode fly &lactivé&a. Temps restant : &e%time%&a."
+fly-enabled-unlimited: "%prefix%&aMode fly &lactivé&a &7(&efly infini&7)&a."
+fly-disabled: "%prefix%&cMode fly désactivé."
+no-time: "%prefix%&cVous ne possédez pas de temps de fly."
+fly-expired: "%prefix%&cVotre temps de fly est écoulé !"
+time-warning: "%prefix%&eIl vous reste &6%time% &ede fly."
+creative-no-need: "%prefix%&cVous pouvez déjà voler dans ce mode de jeu."
+world-disabled: "%prefix%&cLe fly est désactivé dans ce monde."
+no-permission: "%prefix%&cVous n'avez pas la permission."
+
+item-redeemed: "%prefix%&aVous avez ajouté &e%added% &ade fly. Total : &e%total%&a."
+item-max-reached: "%prefix%&cVous ne pouvez pas cumuler plus de &e%max% &cde fly."
+item-unlimited: "%prefix%&cVous avez déjà le fly infini, la plume n'a pas été consommée."
+
+admin-usage:
+  - "%prefix%&e/flyplume give <joueur> <id> [quantité]"
+  - "%prefix%&e/flyplume addtime|removetime|settime <joueur> <durée>"
+  - "%prefix%&e/flyplume check <joueur>"
+  - "%prefix%&e/flyplume reload"
+player-not-found: "%prefix%&cJoueur introuvable : &e%player%"
+player-offline: "%prefix%&c%player% doit être connecté."
+invalid-duration: "%prefix%&cDurée invalide. Exemples : &e90&c, &e10m&c, &e1h30m&c, &e45s&c."
+invalid-item: "%prefix%&cPlume inconnue : &e%id%"
+invalid-amount: "%prefix%&cQuantité invalide."
+item-given: "%prefix%&aVous avez donné &e%amount%x %id% &aà &e%player%&a."
+item-received: "%prefix%&aVous avez reçu &e%amount%x &aplume(s) de fly."
+time-added: "%prefix%&aAjout de &e%time% &ade fly à &e%player%&a. Total : &e%total%&a."
+time-removed: "%prefix%&aRetrait de &e%time% &ade fly à &e%player%&a. Total : &e%total%&a."
+time-set: "%prefix%&aTemps de fly de &e%player% &adéfini à &e%total%&a."
+time-check: "%prefix%&e%player% &apossède &e%total% &ade fly."
+reloaded: "%prefix%&aConfiguration rechargée."
