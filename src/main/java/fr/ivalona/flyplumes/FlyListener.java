@@ -21,8 +21,13 @@ public final class FlyListener implements Listener {
         this.plugin = plugin;
     }
 
-    /** Clic droit avec une plume : ajoute du temps de fly. */
-    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+    /**
+     * Clic droit avec une plume : ajoute du temps de fly.
+     * Pas de ignoreCancelled : un clic dans le vide (RIGHT_CLICK_AIR) est marque
+     * "annule" par Bukkit parce qu'il n'y a aucun bloc touche. On regarde donc
+     * seulement si l'utilisation de l'item a ete refusee (useItemInHand).
+     */
+    @EventHandler(priority = EventPriority.HIGH)
     public void onInteract(PlayerInteractEvent event) {
         if (event.getHand() != EquipmentSlot.HAND) {
             return;
