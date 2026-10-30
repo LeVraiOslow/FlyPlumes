@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Compiler avec Maven
+        run: mvn -B clean package
+
+      - name: Envoyer le jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: FlyPlumes
+          path: target/FlyPlumes-*.jar
+          if-no-files-found: error
